@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+{#    <div class="jumbotron">#}
+{#        <div align="center">#}
+{#            <h1>Current Auth-ed IPs</h1>#}
+{#            {% if currentIPs %}#}
+{#                <ul>#}
+{#                {% for ip in currentIPs %}#}
+{#                    <li>{{ ip }}</li>#}
+{#                {% endfor %}#}
+{#                </ul>#}
+{#            {% endif %}#}
+{#        </div>#}
+{#    </div>#}
+
+    <div class="container">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <span class="input-group-addon">Please select</span>
+            {{ form.choice.label }}{{ form.choice }}
+            {{ form.ip.label }}{{ form.ip }}
+            {{ form.submit() }}
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if current_user.is_authenticated %}
+        <p>Already logged in!</p>
+    {% else %}
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.username.label }}{{ form.username }}
+            {{ form.password.label }}{{ form.password }}
+            {{ form.key.label }}{{ form.key }}
+            {{ form.submit() }}
+        </form>
+    {% endif %}
+
+
+{% endblock %}
